@@ -30,7 +30,7 @@ class Multilinguist:
     Parameters
     ----------
     country_name : str
-         The full name of a country.
+    The full name of a country.
 
     Returns
     -------
@@ -77,4 +77,18 @@ class Multilinguist:
     response = requests.get(self.translatr_base_url, params=params)
     json_response = json.loads(response.text)
     return json_response['translationText']
+
+
+class MathGenius(Multilinguist): 
+  def __init__(self): 
+    super().__init__()
+
+
+
+me = MathGenius()
+print(me.report_total([23,45,676,34,5778,4,23,5465])) # The total is 12048
+me.travel_to("India")
+print(me.report_total([6,3,6,68,455,4,467,57,4,534])) # है को कुल 1604
+me.travel_to("Italy")
+print(me.report_total([324,245,6,343647,686545])) # È Il totale 1030767
 
